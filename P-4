@@ -1,0 +1,28 @@
+Create table compstudent
+( rollno int,
+name varchar(10),
+address varchar(10)
+);
+describe table compstudent;
+alter table compstudent
+add section int;
+describe table compstudent;
+alter table compstudent
+rename compstud;
+describe table compstud;
+alter table compstud
+modify name varchar(5);
+describe table compstud;
+alter table compstud
+drop age;
+
+insert into compstud(rollno,name,address,section)
+
+select* from compstud;
+insert into compstud values(1,'jayes','vasai',45);
+insert into compstud values(56,'siddhesh','vasai',40);
+
+update compstud
+set address='virar'
+where rollno=1;
+select* from compstud;
