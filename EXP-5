@@ -1,0 +1,46 @@
+create table student_3
+(
+sid int primary key,
+sname varchar(20),
+city varchar(20),
+age int,
+marks varchar(20)
+);
+create table department_3
+(
+did int,
+dname varchar(20),
+sid_1 int,
+foreign key(sid_1) references student_3(sid)
+);
+insert into student_3 values(1,'ganesh','kolhapur',19,'89');
+insert into student_3 values(4,'prathmesm','lucknow',20,'89');
+insert into student_3 values(5,'gedant','ratnagiri',19,'90');
+select * from student_3;
+insert into department_3 values(23,'COMPS',1);
+insert into department_3 values(24,'IT',4);
+insert into department_3 values(25,'COMPS',5);
+select * from department_3;
+update student_3
+set age=69
+where sname='vedant';
+delete from department_3 where did=24;
+select min(age) from student_3;
+select avg(marks) from student_3;
+select count(did)
+from department_3
+group by did;
+select count(did)
+from department_3;
+select *
+from student_3
+where sname like '%m';
+select *
+from department_3
+where dname like '%o%';
+select *
+from student_3
+where sname like 'g%';
+select dname
+from department_3
+where dname not like '%a%';
